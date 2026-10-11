@@ -26,7 +26,7 @@ The main goals of the project are to:
 
 ### 1. Home — `index.html`
 
-The homepage introduces Stellar Science Club and its purpose. It acts as the main entry point for visitors, highlighting the community and directing them towards the other sections of the website.
+The homepage introduces Stellar Science Club and its purpose. It acts as the main entry point for visitors, highlighting the community and directing them towards the other sections of the website. 
 
 ### 2. Features — `features.html`
 
@@ -177,7 +177,7 @@ stellar-science-club-website/
 - **`jmss.html`** — JMSS preparation information.
 - **`youtube.html`** — the YouTube video listing.
 - **`team.html`** — information about the club's team.
-- **`data/videos.json`** — the video metadata consumed by the frontend.
+- **`data/videos.json`** — the video metadata consumed by the front end.
 - **`scripts/update_videos.py`** — the Python updater for YouTube metadata.
 - **`.github/workflows/update-youtube.yml`** — the scheduled and manually triggered GitHub Actions workflow.
 
