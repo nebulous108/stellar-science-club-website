@@ -18,8 +18,18 @@ X
 
 ## Automatic YouTube Updates
 
-The YouTube page is connected to the public **@StellarScienceClub** channel through a GitHub Actions workflow.
-#continue this, as it is not finished
+The YouTube page is connected to the public @StellarScienceClub channel through a GitHub Actions workflow.
+
+Every 30 minutes, the workflow:
+1. Checks the YouTube channel for the newest uploads.
+2. Collects the latest video titles, thumbnails, dates and links.
+3. Updates `data/videos.json`.
+4. Commits the changed data back to the repository.
+5. GitHub Pages serves the updated website automatically.
+
+No YouTube API key is stored in the website. The updater uses `yt-dlp` inside GitHub Actions to read the public channel feed. On the other hand, the workflow can also be run manually from the repository's Actions tab using Update YouTube videos → Run workflow.
+
+The YouTube page reads `data/videos.json`. A GitHub Actions workflow runs every 30 minutes and refreshes that file from the public @StellarScienceClub channel. If YouTube temporarily blocks a workflow run, the existing video data is preserved rather than being replaced with an empty feed. The repository also includes a seeded latest upload so the page is populated immediately after deployment.
 
 ## Links
 
@@ -27,4 +37,5 @@ Discord: https://dsc/gg/stellar-science-club
 YouTube: https://www.youtube.com/@StellarScienceClub
 
 ## Hosting
-#continue this
+This is a static multi-page website designed for GitHub Pages. The website itself does not need a server or database. The only automated backend-like process is the GitHub Actions workflow that refreshes the YouTube data file.
+The homepage is `index.html`, and the other pages are regular HTML files in the repository root.
