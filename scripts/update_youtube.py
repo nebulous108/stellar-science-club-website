@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Refresh data/videos.json from the public Stellar Science Club YouTube channel."""
 import json, os, subprocess
 from datetime import datetime, timezone
@@ -5,6 +6,7 @@ from datetime import datetime, timezone
 CHANNEL = "https://www.youtube.com/@StellarScienceClub/videos"
 OUTPUT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "videos.json"))
 
+# Use flat playlist metadata: it is faster and more reliable for a channel feed.
 cmd = [
     "yt-dlp",
     "--flat-playlist",
@@ -24,6 +26,9 @@ for line in result.stdout.splitlines():
         continue
     if item.get("id"):
         entries.append(item)
+
+# If YouTube temporarily blocks the runner, keep the existing data instead of
+# replacing a working feed with an empty array.
 if not entries:
     if result.stderr.strip():
         print("yt-dlp reported an error:")
