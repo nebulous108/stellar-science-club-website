@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Refresh data/videos.json from the public Stellar Science Club YouTube channel."""
 import json, os, subprocess
 from datetime import datetime, timezone
@@ -6,7 +5,6 @@ from datetime import datetime, timezone
 CHANNEL = "https://www.youtube.com/@StellarScienceClub/videos"
 OUTPUT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "videos.json"))
 
-# Use flat playlist metadata: it is faster and more reliable for a channel feed.
 cmd = [
     "yt-dlp",
     "--flat-playlist",
@@ -17,7 +15,7 @@ cmd = [
     CHANNEL,
 ]
 
-result = subprocess.run(cmd, check=False, capture_output=True, text=True)
+result = subprocess.run(cmd, check=False, capture_output=True, text=True, timeout=240)
 entries = []
 for line in result.stdout.splitlines():
     try:
@@ -27,9 +25,10 @@ for line in result.stdout.splitlines():
     if item.get("id"):
         entries.append(item)
 
-# If YouTube temporarily blocks the runner, keep the existing data instead of
-# replacing a working feed with an empty array.
 if not entries:
+    if result.stderr.strip():
+        print("yt-dlp reported an error:")
+        print(result.stderr.strip()[-2000:])
     print("YouTube returned no videos; keeping existing data/videos.json")
     raise SystemExit(0)
 
@@ -44,7 +43,7 @@ for item in entries:
         "url":f"https://www.youtube.com/watch?v={vid}",
         "thumbnail":f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg",
         "published":published,
-        "duration":item.get("duration_string") or "",
+        "duration":item.get("duration_string") or (f"{int(item['duration']) // 60}:{int(item['duration']) % 60:02d}" if isinstance(item.get("duration"), (int, float)) else ""),
     })
 
 payload={
