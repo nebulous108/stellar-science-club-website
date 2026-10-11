@@ -2,9 +2,10 @@
 
 The official website for **Stellar Science Club**, an Australia-focused science community on Discord with 200+ members. The club brings together students interested in science, mathematics, technology and engineering through collaborative learning, homework help, study sessions and discussions about new discoveries.
 
-🌐 **Website:** [https://nebulous108.github.io/stellar-science-club-website/](https://nebulous108.github.io/stellar-science-club-website/)
-💬 **Discord:** [https://dsc.gg/stellar-science-club](https://dsc.gg/stellar-science-club)
-▶️ **YouTube:** [https://www.youtube.com/@StellarScienceClub](https://www.youtube.com/@StellarScienceClub)
+Links:
+- **Website:** [https://nebulous108.github.io/stellar-science-club-website/](https://nebulous108.github.io/stellar-science-club-website/)
+- **Discord:** [https://dsc.gg/stellar-science-club](https://dsc.gg/stellar-science-club)
+- **YouTube:** [https://www.youtube.com/@StellarScienceClub](https://www.youtube.com/@StellarScienceClub)
 
 ---
 
