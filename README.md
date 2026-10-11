@@ -2,9 +2,10 @@
 
 The official website for **Stellar Science Club**, an Australia-focused science community on Discord with 200+ members. The club brings together students interested in science, mathematics, technology and engineering through collaborative learning, homework help, study sessions and discussions about new discoveries.
 
-🌐 **Website:** [https://nebulous108.github.io/stellar-science-club-website/](https://nebulous108.github.io/stellar-science-club-website/)
-💬 **Discord:** [https://dsc.gg/stellar-science-club](https://dsc.gg/stellar-science-club)
-▶️ **YouTube:** [https://www.youtube.com/@StellarScienceClub](https://www.youtube.com/@StellarScienceClub)
+Links:
+- **Website:** [https://nebulous108.github.io/stellar-science-club-website/](https://nebulous108.github.io/stellar-science-club-website/)
+- **Discord:** [https://dsc.gg/stellar-science-club](https://dsc.gg/stellar-science-club)
+- **YouTube:** [https://www.youtube.com/@StellarScienceClub](https://www.youtube.com/@StellarScienceClub)
 
 ---
 
@@ -136,7 +137,6 @@ The updater uses `yt-dlp` within GitHub Actions to access the public channel fee
 | Technology     | Purpose                                                                  |
 | -------------- | ------------------------------------------------------------------------ |
 | HTML           | Defines the structure and content of each page.                          |                                                                         |
-| JavaScript     | Adds interactive behaviour and loads dynamic video data.                 |
 | Python         | Retrieves YouTube metadata and generates the JSON data file.             |
 | JSON           | Stores the video information consumed by the frontend.                   |
 | GitHub Actions | Automates periodic and manual YouTube data updates.                      |
