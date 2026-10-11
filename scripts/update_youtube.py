@@ -24,7 +24,6 @@ for line in result.stdout.splitlines():
         continue
     if item.get("id"):
         entries.append(item)
-
 if not entries:
     if result.stderr.strip():
         print("yt-dlp reported an error:")
