@@ -137,7 +137,6 @@ The updater uses `yt-dlp` within GitHub Actions to access the public channel fee
 | Technology     | Purpose                                                                  |
 | -------------- | ------------------------------------------------------------------------ |
 | HTML           | Defines the structure and content of each page.                          |                                                                         |
-| JavaScript     | Adds interactive behaviour and loads dynamic video data.                 |
 | Python         | Retrieves YouTube metadata and generates the JSON data file.             |
 | JSON           | Stores the video information consumed by the frontend.                   |
 | GitHub Actions | Automates periodic and manual YouTube data updates.                      |
